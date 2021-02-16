@@ -6,22 +6,28 @@ public abstract class Shape {
     private double y;
 
     public Shape(){
+
         this(0.0, 0.0);
     }
 
     public Shape(double x, double y){
+
         setLocation(x, y);
     }
 
     public abstract double area();
 
     public double getX() {
+
         return x;
     }
 
     public double getY() {
+
         return y;
     }
+
+    public abstract double perimeter();
 
     public boolean equals(Object obj){
 
@@ -39,7 +45,10 @@ public abstract class Shape {
     }
 
     public String toString(){
+
         return String.format("(%.1f, %.1f)", x, y);
     }
+
+
 
 }

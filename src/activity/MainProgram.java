@@ -39,8 +39,50 @@ public class MainProgram {
         StringBuilder builder = new StringBuilder("\n");
 
         // TODO : Create matrices for testing
+        SquareMatrix matrix = read(location);
+        SquareMatrix other = read(otherLocation);
+        SquareMatrix identityMatrix = new SquareMatrix(3);
+        SquareMatrix addMatrix = matrix.add(other);
+        SquareMatrix multiplyMatrix = matrix.multiply(other);
+        SquareMatrix subtractMatrix = matrix.subtract(other);
+
+
+        builder.append(matrix);
+        builder.append(other);
+        builder.append(addMatrix);
+        builder.append(multiplyMatrix);
+        builder.append(subtractMatrix);
 
         // TODO : Test operations of Square Matrices
+        System.out.println("Matrix");
+        System.out.println(matrix);
+
+        System.out.println("Other_Matrix");
+        System.out.println(other);
+
+        System.out.println("Identity Matrix");
+        System.out.println(identityMatrix);
+
+        System.out.println("Addition Matrix");
+        System.out.println(addMatrix);
+
+        System.out.println("Multiplication Matrix");
+        System.out.println(multiplyMatrix);
+
+        System.out.println("Subtraction Matrix");
+        System.out.println(subtractMatrix);
+
+        System.out.println("Matrix equals to other_matrix: " + matrix.equals(other));
+
+        System.out.println();
+        System.out.println("Matrix is diagonal: " + matrix.isDiagonal());
+        System.out.println("other_Matrix is diagonal: " + other.isDiagonal());
+
+        System.out.println();
+        System.out.println("Matrix is Identity: " + matrix.isIdentity());
+        System.out.println("other_Matrix is Identity: " +other.isIdentity());
+
+
 
         // write to output file
         write(outputLocation, builder);
