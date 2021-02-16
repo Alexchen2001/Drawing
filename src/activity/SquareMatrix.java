@@ -14,7 +14,6 @@ public class SquareMatrix {
         this.size = size;
     }
 
-
     public SquareMatrix(int[][] matrix){
         int rows = matrix.length;
         int columns = matrix[0].length;
@@ -79,16 +78,6 @@ public class SquareMatrix {
         return true;
     }
 
-    public SquareMatrix subtract(SquareMatrix other){
-        int[][] result = new int[size][size];
-        for (int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
-                result[i][j] = this.matrix[i][j] - other.matrix[i][j];
-            }
-        }
-        return new SquareMatrix(result);
-    }
-
     public SquareMatrix multiply(SquareMatrix other){
         int[][] result = new int[size][size];
         for (int i = 0; i < size; i++){
@@ -101,6 +90,17 @@ public class SquareMatrix {
         }
         return new SquareMatrix(result);
     }
+
+    public SquareMatrix subtract(SquareMatrix other){
+        int[][] result = new int[size][size];
+        for (int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                result[i][j] = this.matrix[i][j] - other.matrix[i][j];
+            }
+        }
+        return new SquareMatrix(result);
+    }
+
     //TODO: Update Class
 
     @Override
