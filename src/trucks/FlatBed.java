@@ -3,9 +3,18 @@ package trucks;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class FlatBed {
+public class FlatBed extends Truck {
 
     //TODO: Update Class, you are expected to figure this out!
+    protected static final Color DEFAULT_COLOR = new Color(125, 180,250);
+
+    public FlatBed(Graphics pen){
+        super(pen,DEFAULT_COLOR);
+    }
+
+    public FlatBed(Graphics pen, Color color){
+        super(pen,color);
+    }
 
     public void draw(){
         int outerXLeft  = startX + 10;

@@ -25,6 +25,7 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
     private JLabel firstNameLabel;                 // Label for first name
     private JLabel lastNameLabel;                  // Label for last name
     private JLabel amountPaidLabel;                // Label for amount paid
+    private JButton cancelButton;                  // AC:Triggers cancelation of reservation
     private JButton reserveButton;                 // Triggers seat reservation
     private JButton quitButton;                    // Triggers termination of GUI
     private JTable seatStatusTable;                // Table tracks seat reservations
@@ -74,6 +75,9 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
         amountPaidField = new JFormattedTextField(currencyFormat);
         amountPaidField.setEditable(true);
         amountPaidField.setValue(0.0);
+
+        cancelButton = new JButton("Cancel");
+        cancelButton.addActionListener(this);
 
         reserveButton = new JButton("Reserve");
         reserveButton.addActionListener(this);
@@ -167,6 +171,14 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
         layoutConst.gridy = 4;
         add(amountPaidField, layoutConst);
 
+        //What I did
+        layoutConst = new GridBagConstraints();
+        layoutConst.insets = new Insets(0,10,10,5);
+        layoutConst.fill = GridBagConstraints.HORIZONTAL;
+        layoutConst.gridx = 4;
+        layoutConst.gridy = 3;
+        add(cancelButton, layoutConst);
+
         layoutConst = new GridBagConstraints();
         layoutConst.insets = new Insets(0, 10, 10, 5);
         layoutConst.fill = GridBagConstraints.HORIZONTAL;
@@ -223,6 +235,30 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
                 // Show success dialog
                 JOptionPane.showMessageDialog(this, "Seat reservation completed.");
             }
+        }
+        // What I did
+        else if (sourceEvent == cancelButton){
+            seatNum = ((Number) seatNumField.getValue()).intValue();
+
+            // User tried to cancel non-existing seat
+            if (seatNum >= NUM_SEATS || seatNum < 0) {
+                // Show failure dialog
+                JOptionPane.showMessageDialog(this, "Seat doesn't exist!");
+            }
+            // User tried to reserve a non-empty seat
+            else if (seatResArr.get(seatNum).isEmpty()) {
+                // Show failure dialog
+                JOptionPane.showMessageDialog(this, "Seat is empty!");
+            }
+            // Reserve the specified seat
+            else {
+                seatResArr.get(seatNum).makeEmpty(); // subtract seat to ArrayList
+                updateTable();                        // Synchronize table with sts ArrayList
+
+                // Show success dialog
+                JOptionPane.showMessageDialog(this, "Seat reservation cancelled.");
+            }
+
         }
         else if (sourceEvent == quitButton) {
             dispose();                               // Terminate program

@@ -3,10 +3,19 @@ package trucks;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Boxed {
-
+public class Boxed extends Truck{
     //TODO: Update Class, you are expected to figure this out!
+    protected static final Color DEFAULT_COLOR = new Color(250, 185,0);
 
+    public Boxed(Graphics pen){
+        super(pen,DEFAULT_COLOR);
+    }
+
+    public Boxed(Graphics pen, Color color){
+        super(pen,color);
+    }
+
+    @Override
     public void draw(){
         int outerXLeft  = startX + 10;
         int outerXRight = startX + 70;

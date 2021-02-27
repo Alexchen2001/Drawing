@@ -5,22 +5,24 @@ import java.awt.Graphics;
 
 public class Circles implements Drawable, Fillable{
 
-    Color     color;
-    Graphics  pen;
-    int       x;
-    int       y;
+    private Color     color;
+    private Graphics  pen;
+    private int       x;
+    private int       y;
 
     public Circles(Graphics _graphics){
-        pen     = _graphics;
-        color   = Color.WHITE;
+        this.pen     = _graphics;
+        this.color   = Color.WHITE;
         setLocation(30, 5);
     }
 
     @Override
     public void draw() {
-        move(80, 80);
+        /* move(80, 80);
         color = Fillable.AQUA;
-        draw(color);
+        draw(color); */
+        color = Fillable.AQUA;
+
     }
 
     @Override
@@ -42,6 +44,7 @@ public class Circles implements Drawable, Fillable{
 
     @Override
     public void move(int dx, int dy) {
+
         setLocation(x + dx, y + dy);
     }
 

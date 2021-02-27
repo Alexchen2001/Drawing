@@ -22,7 +22,7 @@ public class Triangle extends Shape{
     }
 
     public boolean equals(Object obj){
-        if(obj instanceof Shape){
+        if(obj instanceof Triangle){
             Triangle other = (Triangle) obj;
             return this.a == other.a && this.b == other.b && this.c == other.c;
         }
@@ -42,9 +42,11 @@ public class Triangle extends Shape{
         return c;
     }
 
+    @Override
     public double perimeter(){
         return a + b + c;
     }
+
     @Override
     public String toString(){
         return String.format("%s, (%.1f), (%.1f), (%.1f)", super.toString(), a, b, c);

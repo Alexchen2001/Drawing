@@ -17,6 +17,16 @@ public abstract class Shape {
 
     public abstract double area();
 
+    public boolean equals(Object obj){
+
+        if(obj instanceof Shape){
+            Shape other = (Shape) obj;
+            return this.x == other.x && this.y == other.y;
+        }
+
+        return false;
+    }
+
     public double getX() {
 
         return x;
@@ -28,16 +38,6 @@ public abstract class Shape {
     }
 
     public abstract double perimeter();
-
-    public boolean equals(Object obj){
-
-        if(obj instanceof Shape){
-            Shape other = (Shape) obj;
-            return this.x == other.x && this.y == other.y;
-        }
-
-        return false;
-    }
 
     public void setLocation(double x, double y){
         this.x = x;

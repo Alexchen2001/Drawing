@@ -5,6 +5,7 @@ public class Circle extends Shape {
     private double radius;
 
     public Circle(){
+
         this(1.0);
     }
 
@@ -21,6 +22,7 @@ public class Circle extends Shape {
         return Math.PI * radius * radius;
     }
 
+    @Override
     public boolean equals(Object obj){
 
         if(obj instanceof Circle){

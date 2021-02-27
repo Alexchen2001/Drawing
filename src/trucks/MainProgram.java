@@ -11,10 +11,18 @@ public class MainProgram {
         display.pause(200);
 
         // TODO : draw truck at specific location
+        truck.setLocation(50,200);
+        truck.draw();
+
 
         // TODO : move truck to a different location and draw
+        truck.move(0,- 100);
+        truck.draw();
 
         // TODO : resize Truck at specific location
+        truck.setLocation(250,50);
+        truck.drawToScale(200);
+
 
         // Pause for a bit
         display.pause(200);
@@ -26,10 +34,16 @@ public class MainProgram {
         display.pause(200);
 
         // TODO : draw truck at specific location
+        truck.setLocation(50,400);
+        truck.draw();
 
         // TODO : move truck to a different location and draw
+        truck.move(0,-100);
+        truck.draw();
 
         // TODO : resize Truck at specific location
+        truck.setLocation(250,300);
+        truck.drawToScale(250);
 
         // Pause for a bit
         display.pause(200);
@@ -41,14 +55,19 @@ public class MainProgram {
         display.setBackground(Color.GRAY);
 
         // Get Graphics Pen Object for Drawing in Window
-        Graphics pen = display.getGraphics();
 
+        Graphics pen = display.getGraphics();
         // TODO : Create a Boxed Truck for display
+        Truck truck = new Boxed(pen);
+        testBoxedTruck(display, truck);
+        //display.clear();
 
         // clear graphics (if you want to)
-        // display.clear();
+        //display.clear();
 
         // TODO : with same reference, to create a FlatBed Truck for display
+        truck = new FlatBed(pen);
+        testFlatBedTruck(display, truck);
 
     }
 }

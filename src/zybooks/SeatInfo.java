@@ -6,19 +6,23 @@ public class SeatInfo {
     private String lastName;    // Last name
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
     public int getAmountPaid() {
+
         return amtPaid;
     }
 
     // Method to check if Seat is empty
     public boolean isEmpty() {
+
         return firstName.equals("empty");
     }
 

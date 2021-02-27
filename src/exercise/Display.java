@@ -14,6 +14,7 @@ public class Display {
     public JFrame frame;		//Display Window
 
     public Display() {
+
         this(WIDTH, HEIGHT);
     }
 
