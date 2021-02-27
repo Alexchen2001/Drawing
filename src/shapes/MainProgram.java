@@ -18,8 +18,8 @@ public class MainProgram {
             System.out.println("side C: " + ((Triangle) shape).getC());
 
         }
-        System.out.println("perimeter: " + shape.perimeter());
-        System.out.println("area: " + shape.area());
+        System.out.println(String.format("perimeter: %.1f",shape.perimeter()));
+        System.out.println(String.format("area: %.1f",shape.area()));
     }
 
     public static void main(String[] args) {
