@@ -37,6 +37,8 @@ public class MainProgram {
 
         // TODO : Draw circles with Fillable AQUA Color
         filledCircles.draw();
+        other.move(50,50);
+        other.draw(Fillable.AQUA);
         display.pause(500);
     }
 
