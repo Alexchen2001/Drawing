@@ -15,7 +15,7 @@ public abstract class Truck {
     public Truck(Graphics pen, Color color){
         this.pen = pen;
         this.color = color;
-        System.out.println("Truck");
+        System.out.print("Truck >");
         setLocation(25,25);
 
     }

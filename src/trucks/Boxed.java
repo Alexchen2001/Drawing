@@ -9,10 +9,13 @@ public class Boxed extends Truck{
 
     public Boxed(Graphics pen){
         super(pen,DEFAULT_COLOR);
+        System.out.println(" Boxed");
+
     }
 
     public Boxed(Graphics pen, Color color){
         super(pen,color);
+        System.out.println(" Boxed");
     }
 
     @Override

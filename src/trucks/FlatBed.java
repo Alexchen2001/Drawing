@@ -10,10 +10,12 @@ public class FlatBed extends Truck {
 
     public FlatBed(Graphics pen){
         super(pen,DEFAULT_COLOR);
+        System.out.println(" FlatBed");
     }
 
     public FlatBed(Graphics pen, Color color){
         super(pen,color);
+        System.out.println(" FlatBed");
     }
 
     public void draw(){
